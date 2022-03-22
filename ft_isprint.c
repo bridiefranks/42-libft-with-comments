@@ -6,10 +6,11 @@
 /*   By: bfranks <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 18:06:11 by bfranks           #+#    #+#             */
-/*   Updated: 2022/03/10 11:25:33 by bfranks          ###   ########.fr       */
+/*   Updated: 2022/03/22 12:50:04 by bfranks          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/* This function tests whether the inputted int c is a printable character (return 1) or not (return 0).
+ * See decimal ascii set numbers 32 - 126 for the list of printable characters.*/
 #include "libft.h"
 /*#include <stdio.h>*/
 
