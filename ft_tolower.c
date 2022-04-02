@@ -9,7 +9,7 @@
 /*   Updated: 2022/03/10 15:58:13 by bfranks          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/* see 'ft_toupper.c' as it is the same but reverse*/
 #include "libft.h"
 /*#include <stdio.h>*/
 
