@@ -35,8 +35,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	 * point to the same spot.
 	 * Not sure why skipping intermediate pointers (ptr_1 and ptr_2) and directly casting the original 
 	 * pointers doesn't work- according to the internet it should. Ie doing this: s1 = (unsigned char *)s1;
-	 * doesn't compile, with errors suggesting the pointers are still void type (saying void pointers
-	 * can't be dereferenced).*/
+	 * doesn't compile, with errors suggesting the pointers are still void type ((saying void pointers
+	 * can't be dereferenced)).*/
 	i = 0;
 	while (i < n && ptr_1[i] == ptr_2[i])
 	/* while we haven't yet reached n and while the values at position i are the same between the 2 memory

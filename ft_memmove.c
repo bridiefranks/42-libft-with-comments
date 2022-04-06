@@ -11,7 +11,10 @@
 /* ************************************************************************** */
 /* This function copies len bytes from string src to string dst. This function is used when the 2 strings may overlap (contrast
  * memcpy). The copy is always done in a non-destructive manner
- * A pointer to the original value of dst is returned.*/
+ * A pointer to the original value of dst is returned.
+ * I find this function really hard to explain! -the logic in regards to the overlap region and direction
+ * of copying. Hopefully it makes a bit of sense and by writing it out or visualising with objects etc it
+ * can make more sense...*/
 #include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
@@ -31,7 +34,11 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	 * e.g. if the whole memory area is abcdefghijkl and dst is abcdef and src is defghi, if we
 	 * started copying from the start of src (good) the result would be: defghighijkl. Whereas if
 	 * we started copying from the end of src and worked backwards, it would be: ghighighifkl. 
-	 * This is hard to explain sorry, probably best to write it out on paper to visualise...*/
+	 * This is hard to explain sorry, probably best to write it out on paper to visualise...but
+	 * essentially, the main point is that we want to copy first from the overlap region, so that
+	 * the information there is not lost. If we went in the opposite direction, the data in the
+	 * overlap region would be altered from the start and as such the original data in that region
+	 * would be lost and not able to be copied.*/
 	{
 		i = 0;
 		while (i < len)

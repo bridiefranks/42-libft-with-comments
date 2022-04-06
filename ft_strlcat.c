@@ -16,7 +16,8 @@
  *  length of dst plus the length of src. This result can be used to determine if the final string
  *  was truncated (ie if dstsize was less than the combined length of dst and src?). Unless, if 
  *  dstsize is < the length of dst, it will return the length of src plus dstsize (which in this 
- *  case is less than the length of dst). Not entirely sure why this return value is desired.*/
+ *  case is less than the length of dst). Not entirely sure why this return value is desired. And 
+ *  what use it has practically/what info it tells us*/
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 {
@@ -29,7 +30,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	/*if dstsize is 0, just return the lenght of src*/
 		return (ft_strlen(src));
 	if (dstsize < ft_strlen(dst))
-	/*as 'explained' above, don't really understand */ 
+	/*as mentioned above, I'm not really sure why this return value is desired/how it's used 
+	 * practically */ 
 		tot_len = dstsize + ft_strlen(src);
 	else
 	{

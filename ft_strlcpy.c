@@ -12,7 +12,7 @@
 
 #include "libft.h"
 /* this function copies from src to dst, up until the point where you have copied dstsize bytes. Returns
- * the length of src, not really sure why though?*/
+ * the length of src, not really sure why this is actually wanted though?*/
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
