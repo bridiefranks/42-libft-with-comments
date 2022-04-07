@@ -9,12 +9,12 @@
 /*   Updated: 2022/03/17 13:29:12 by bfranks          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/* This function converts (number) characters to ints. It will iterated through a given string; if the
+/* This function converts (number) characters to ints. It will iterate through a given string; if the
  * characters are a space or between the ascii values of 9 and 13 (includes things like tabs) it will keep
  * iterating and checking until it finds number characters (by using ft_isdigit to see if they're numbers). 
  * Then, it will convert those number characters to int type. If the characters in the string stop being 
- * numbers (e.g. become letters or spaces etc) it will stop checking and return the resultant number, in 
- * int form. So it will only convert the first string of digits and none after that.*/ 
+ * digits (e.g. become letters or spaces etc) it will stop checking and return the resultant number, in 
+ * int form. So it will only convert the first uninterrupted group of digits and none after that.*/ 
 #include "libft.h"
 
 int	ft_atoi(const char *str)
@@ -35,8 +35,7 @@ int	ft_atoi(const char *str)
 	/* if the value is a negative sign, ie the number is negative, set 'neg' variable to equal 1 and move to
 	 * the next character in the string. Later on, if neg was set to 1, this will be used to make the final
 	 * int number negative again.
-	 * If the character is +, just iterate to the next character in the string too. This could really be
-	 * included in the while conditions rather than the if statment I think*/
+	 * If the character is +, just iterate to the next character in the string.*/
 	{
 		if (str[i] == '-')
 			neg = 1;
@@ -59,8 +58,8 @@ int	ft_atoi(const char *str)
 		 * digit by digit, rather than the whole 'number' at once.
 		 * Then it will increment to the next digit- or, if the next character in the string is no 
 		 * longer a digit, it will stop there.
-		 * So for an example, if the string was '++++1867aaaaaa', the code would initially iterate 
-		 * through all the +, reach 1 and recognise it as a digit via ft_isdigit, set result to equal
+		 * So for an example, if the string was '     1867aaaaaa', the code would initially iterate 
+		 * through all the spaces, reach 1 and recognise it as a digit via ft_isdigit, set result to equal
 		 * 0 *10 + ascii of 1 - ascii of 0. So result now equals 1 in int form. Then, it will increment
 		 * i, and move to the next position, which contains 8. It is a digit. Result is now 1 from the
 		 * previous digit; now result will be reset to 1 * 10 + (ascii of 8) - (ascii of 0) and thus
